@@ -69,19 +69,49 @@ Interaction Details: ${input}
   };
 
   return (
-    <div style={{ padding: "30px", fontFamily: "Inter" }}>
-      <h1>AI CRM HCP Module</h1>
-      <h2>Log Interaction Screen</h2>
+    <div
+      style={{
+        padding: "30px",
+        fontFamily: "Inter",
+        backgroundColor: "#f4f7fb",
+        minHeight: "100vh",
+      }}
+    >
+      <h1 style={{ color: "#1e293b" }}>🚀 AI CRM HCP Module</h1>
+
+      <h2 style={{ color: "#334155" }}>
+        Healthcare Professional Interaction System
+      </h2>
 
       {/* Toggle Buttons */}
       <div style={{ marginTop: "20px" }}>
-        <button onClick={() => setMode("form")}>
+        <button
+          onClick={() => setMode("form")}
+          style={{
+            padding: "10px 18px",
+            backgroundColor: "#2563eb",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
+        >
           Structured Form
         </button>
 
         <button
           onClick={() => setMode("chat")}
-          style={{ marginLeft: "10px" }}
+          style={{
+            marginLeft: "10px",
+            padding: "10px 18px",
+            backgroundColor: "#0f172a",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
         >
           Conversational Chat
         </button>
@@ -89,8 +119,19 @@ Interaction Details: ${input}
 
       {/* Structured Form */}
       {mode === "form" && (
-        <div style={{ marginTop: "30px" }}>
-          <h3>Structured Form</h3>
+        <div
+          style={{
+            marginTop: "30px",
+            background: "white",
+            padding: "25px",
+            borderRadius: "12px",
+            width: "650px",
+            boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+          }}
+        >
+          <h3 style={{ color: "#1e293b" }}>
+            📝 Log HCP Interaction
+          </h3>
 
           <input
             type="text"
@@ -101,6 +142,8 @@ Interaction Details: ${input}
               width: "300px",
               padding: "10px",
               marginBottom: "10px",
+              borderRadius: "6px",
+              border: "1px solid #cbd5e1",
             }}
           />
 
@@ -108,13 +151,15 @@ Interaction Details: ${input}
 
           <input
             type="text"
-            placeholder="Hospital Name"
+            placeholder="Enter Hospital Name"
             value={hospitalName}
             onChange={(e) => setHospitalName(e.target.value)}
             style={{
               width: "300px",
               padding: "10px",
               marginBottom: "10px",
+              borderRadius: "6px",
+              border: "1px solid #cbd5e1",
             }}
           />
 
@@ -128,24 +173,40 @@ Interaction Details: ${input}
             style={{
               width: "500px",
               padding: "10px",
+              borderRadius: "6px",
+              border: "1px solid #cbd5e1",
             }}
           />
 
           <br />
           <br />
 
-          <button onClick={handleSubmit}>
+          <button
+            onClick={handleSubmit}
+            style={{
+              backgroundColor: "#16a34a",
+              color: "white",
+              padding: "10px 18px",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+          >
             Submit Interaction
           </button>
 
           {/* AI Response */}
           {response && (
             <div style={{ marginTop: "30px" }}>
-              <h3>AI Response</h3>
+              <h3 style={{ color: "#1e293b" }}>
+                🤖 AI Generated Response
+              </h3>
 
               <div
                 style={{
-                  background: "#1f1f1f",
+                  background: "#0f172a",
+                  color: "white",
                   padding: "20px",
                   borderRadius: "10px",
                   whiteSpace: "pre-wrap",
@@ -160,33 +221,51 @@ Interaction Details: ${input}
               <br />
 
               {/* Edit Section */}
-              <h3>Edit Interaction</h3>
+              <h3 style={{ color: "#1e293b" }}>
+                ✏️ Edit Existing Interaction
+              </h3>
 
               <textarea
-                placeholder="Enter update request..."
+                placeholder="Example: Change meeting outcome to product demo completed"
                 rows="4"
                 value={updateRequest}
                 onChange={(e) => setUpdateRequest(e.target.value)}
                 style={{
                   width: "500px",
                   padding: "10px",
+                  borderRadius: "6px",
+                  border: "1px solid #cbd5e1",
                 }}
               />
 
               <br />
               <br />
 
-              <button onClick={handleEdit}>
-                Update Interaction
+              <button
+                onClick={handleEdit}
+                style={{
+                  backgroundColor: "#2563eb",
+                  color: "white",
+                  padding: "10px 18px",
+                  border: "none",
+                  borderRadius: "8px",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                }}
+              >
+                Edit Existing Interaction
               </button>
 
               {editResponse && (
                 <div style={{ marginTop: "20px" }}>
-                  <h3>Updated Response</h3>
+                  <h3 style={{ color: "#1e293b" }}>
+                    ✅ Edited Interaction Result
+                  </h3>
 
                   <div
                     style={{
-                      background: "#1f1f1f",
+                      background: "#0f172a",
+                      color: "white",
                       padding: "20px",
                       borderRadius: "10px",
                       whiteSpace: "pre-wrap",
@@ -205,8 +284,19 @@ Interaction Details: ${input}
 
       {/* Chat Interface */}
       {mode === "chat" && (
-        <div style={{ marginTop: "30px" }}>
-          <h3>Conversational Chat</h3>
+        <div
+          style={{
+            marginTop: "30px",
+            background: "white",
+            padding: "25px",
+            borderRadius: "12px",
+            width: "650px",
+            boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+          }}
+        >
+          <h3 style={{ color: "#1e293b" }}>
+            💬 Conversational AI Chat
+          </h3>
 
           <textarea
             placeholder="Chat with AI Agent here..."
@@ -214,13 +304,27 @@ Interaction Details: ${input}
             style={{
               width: "500px",
               padding: "10px",
+              borderRadius: "6px",
+              border: "1px solid #cbd5e1",
             }}
           />
 
           <br />
           <br />
 
-          <button>Send Message</button>
+          <button
+            style={{
+              backgroundColor: "#7c3aed",
+              color: "white",
+              padding: "10px 18px",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+              fontWeight: "bold",
+            }}
+          >
+            Send Message
+          </button>
         </div>
       )}
     </div>
